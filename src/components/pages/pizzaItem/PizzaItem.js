@@ -4,43 +4,20 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class ArtistListItem extends Component {
-    // state = {
-    //     name: '',
-    //     description: '',
-    //     price: ''
-    // }
-    // deleteArtist = (event, id) => {
-    //   console.log(id);
-    //     axios({
-    //         method: 'DELETE',
-    //         url: `/artist/${id}`
-    //     })
-    //     .then((response) => {
-    //         this.props.dispatch({
-    //             type: 'DELETE_FROM_LIST',
-    //             payload: {id}
-    //         })
-    //         this.props.refresh();
-    //     });
-    // }
-
-   
-
-    addToCart = (event, item) => {
-        console.log(item);
+    addToCart = (event) => {
         this.props.dispatch({
             type: 'ADD_TO_CART',
-            payload: item
+            payload: this.props.item
         })
     }
 
     render() {
         return (
             <tr>
-                <td>{this.props.name}</td>
-                <td>{this.props.description}</td>
-                <td>{this.props.price}</td>
-                <td><button onClick={(event) => this.addToCart(event, this.props.item)}>
+                <td>{this.props.item.name}</td>
+                <td>{this.props.item.description}</td>
+                <td>{this.props.item.price}</td>
+                <td><button onClick={this.addToCart}>
                     Add To Cart
                     </button></td>
               </tr>

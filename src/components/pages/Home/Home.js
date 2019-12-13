@@ -25,6 +25,10 @@ class Home extends Component {
         console.warn(error);
       })
   }
+
+  goToNext = (event) => {
+    // navigate to Customer Info
+  }
     
   render() {
       return (
@@ -41,6 +45,9 @@ class Home extends Component {
             </thead>
             <PizzaList />
           </table>
+          <div>
+            <button onClick={this.goToNext}>NEXT</button>
+          </div>
         </div>
       );
   }

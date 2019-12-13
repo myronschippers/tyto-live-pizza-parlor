@@ -15,11 +15,9 @@ class PizzaList extends Component {
             //     <td>{item.price}</td>
             //   </tr>
                     <PizzaItem 
-                    item={item}
-                    key={index} 
-                    name={item.name} 
-                    description={item.description} 
-                    price={item.price}/>
+                        item={item}
+                        key={index}
+                    />
                  )
                 });
     
