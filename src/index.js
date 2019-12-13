@@ -46,10 +46,14 @@ const orderReducer = (state= defaultOrder, action) => {
             ]
         }
     } else if (action.type === 'DELETE_FROM_LIST') {
-        const newState = state.filter((item, index) => {
-            return index !== action.payload.index
+        const newState = state.pizzas.filter((item, index) => {
+            return item.id !== action.payload.id;
         });
-        return newState;
+
+        return {
+            ...state,
+            pizzas: newState
+        }
     }
     return state;
 }

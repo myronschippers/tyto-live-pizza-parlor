@@ -33,6 +33,7 @@ class Home extends Component {
   render() {
       return (
         <div className="App">
+          <h2>Step 1: Select Your Pizza</h2>
           <p>Pizza is great.</p>
           <table>
             <thead>
