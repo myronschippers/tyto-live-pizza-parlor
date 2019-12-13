@@ -21,8 +21,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
-          <div className="link"><Link to="/">Home</Link></div>
-          <div className="link"><Link to="/cart">Cart</Link></div>
         </header>
         <br />
         {/* <img alt="" src="images/pizza_photo.png" /> */}
