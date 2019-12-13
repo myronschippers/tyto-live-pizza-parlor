@@ -35,6 +35,7 @@ const defaultOrder = {
 };
 const orderReducer = (state= defaultOrder, action) => {
     if(action.type === 'ADD_TO_CART') {
+        const total = state.total + parseFloat(action.payload.price);
         return {
             ...state,
             pizzas: [
@@ -43,16 +44,19 @@ const orderReducer = (state= defaultOrder, action) => {
                     id: action.payload.id,
                     quantity: 1
                 }
-            ]
+            ],
+            total: total,
         }
     } else if (action.type === 'DELETE_FROM_LIST') {
+        const total = state.total - parseFloat(action.payload.price);
         const newState = state.pizzas.filter((item, index) => {
             return item.id !== action.payload.id;
         });
 
         return {
             ...state,
-            pizzas: newState
+            pizzas: newState,
+            total: total,
         }
     } else if (action.type === 'ADD_CUSTOMER_TO_ORDER') {
         return {
