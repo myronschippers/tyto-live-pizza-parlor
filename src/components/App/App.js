@@ -8,6 +8,8 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Cart from '../pages/Cart/Cart';
+import CustomerInfo from '../pages/CustomerInfo/CustomerInfo';
+import Admin from '../pages/Admin/Admin';
 
 class App extends Component {
 
@@ -20,12 +22,14 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
           <div className="link"><Link to="/">Home</Link></div>
-          <div className="link"><Link to="/api/cart">Cart</Link></div>
+          <div className="link"><Link to="/cart">Cart</Link></div>
         </header>
         <br />
         {/* <img alt="" src="images/pizza_photo.png" /> */}
         <Route path="/" exact component={Home} />
-        <Route path="/api/cart" component={Cart} />
+        <Route path="/customer-info" component={CustomerInfo} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/admin" component={Admin} />
       </div>
       </Router>
     );
