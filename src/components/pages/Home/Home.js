@@ -28,6 +28,7 @@ class Home extends Component {
 
   goToNext = (event) => {
     // navigate to Customer Info
+    this.props.history.push('/customer-info');
   }
     
   render() {
