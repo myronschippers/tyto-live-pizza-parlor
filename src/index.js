@@ -54,6 +54,11 @@ const orderReducer = (state= defaultOrder, action) => {
             ...state,
             pizzas: newState
         }
+    } else if (action.type === 'ADD_CUSTOMER_TO_ORDER') {
+        return {
+            ...state,
+            ...action.payload
+        };
     }
     return state;
 }
